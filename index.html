@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="app/css/style.css" rel="stylesheet">
+    <title>Junior Front End Developer for SimilarWeb</title>
+</head>
+<body ng-controller="appController">
+<div class="container">
+    <div class="row main-row">
+        <div class="col-lg-6  search-back">
+            <div class="row search-case">
+                <div class="col-lg-12  search-back-1">
+                    <div>
+                        <input type="text" class="search" ng-model="site" name="search"
+                               ng-keyup="$event.keyCode == 13 ? search(site) : null">
+                    </div>
+                </div>
+            </div>
+            <div class="row info-data-error" ng-hide="show.error">
+                Error, not found or bad request.<br> Please type new site
+            </div>
+            <div class="row info-data" ng-hide="show.info">
+                <div class="col-lg-12  info-data-site">
+                    <img width="20" height="20" ng-src="{{data.FavIcon}}">
+                    <p class="url-call">{{urlChoose}}</p>
+                </div>
+                <div class="col-lg-12  info-data-title">
+                    {{data.Title}}
+                    <p class="info-data-category">#{{data.Category}}</p>
+                </div>
+                <div class="col-lg-12  info-data-rank">
+                    <div class="info-border">
+                        <div>Global rank <span class="rank">{{data.GlobalRank}}</span></div>
+                        <div>Country rank <span class="rank">{{data.Country}}</span></div>
+                        <div>CategoryRank: <span class="rank">{{data.CategoryRank}}</span></div>
+                    </div>
+                </div>
+                <div class="col-lg-12  similar-sites-info"> Similar Sites</div>
+                <div class="col-lg-12  line"></div>
+                <div class="col-lg-12 "></div>
+                <div ng-repeat="data in SimilarSites | limitTo:12 ">
+                    <div class="similar-sites" ng-click="search(data.Url)">
+                        <div class="similar-sites-icon" style="">
+                            <a>
+                                <img width="15" height="15" ng-src="{{data.FavIcon}}">
+                            </a>
+                        </div>
+                        <div class="url-show">
+                            {{data.Url}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6  iframe">
+            <iframe id="site" frameborder="0"></iframe>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="app/js/loading-bar.js"></script>
+<script src="app/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+body, html {
+    font-family: Open Sans;
+    height: 100% !important;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+.similar-sites {
+    float: left;
+    cursor: pointer;
+    display: table;
+    margin: 10px;
+    width: 170px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.search-back-1 {
+    height: 50px;
+    background: #272D3A
+}
+
+.search-back {
+    padding: 0;
+    height: 100%;
+}
+
+.search {
+    background: #fff url('../img/search.png') no-repeat 15px 8px;
+    width: 250px;
+    border-radius: 15px;
+    height: 30px;
+    border: 0;
+    padding-left: 40px;
+    margin: 10px 0 10px 35px;
+}
+
+.info-data {
+    display: table;
+    margin-left: 10px;
+    box-shadow: 8px -7px 8px rgba(0, 0, 0, 0.3);
+}
+
+.info-data-error {
+    display: table;
+    color: #D42A58;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.info-data img {
+    border: none;
+}
+
+.info-data .info-data-category {
+    color: #D42A58;
+}
+
+.info-data-site {
+    font-size: 34px;
+    color: #22344C;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.info-data-rank {
+    padding-right: 30px;
+}
+
+.info-data-rank .info-border {
+    width: 100%;
+    border: 1px solid #A1A1A1;
+    color: #A1A1A1;
+}
+
+.rank {
+    color: #7EAAD5;
+    float: right;
+    font-weight: 600;
+}
+
+.info-border div {
+    margin: 20px;
+}
+
+.info-data-title {
+    margin-bottom: 20px;
+}
+
+.container {
+    height: 100% !important;
+}
+
+.main-row {
+    min-height: 100%;
+}
+
+.url-call {
+    display: inline-block;
+}
+
+.url-show {
+    display: table-cell;
+    margin-right: 5px;
+    word-wrap: break-word;
+    width: 100%;
+    max-width: 130px;
+    vertical-align: middle;
+    color: #22344C;
+    font-weight: 600;
+}
+
+.similar-sites-icon a {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.similar-sites-icon {
+    float: left;
+    display: table;
+    margin: 10px
+}
+
+.similar-sites-info {
+    margin: 10px 0 10px 0;
+}
+
+.line {
+    border: 1px solid #A1A1A1;
+    width: 40px;
+    margin-left: 15px;
+}
+
+.iframe {
+    height: 99vh;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-device-width: 320px) {
+    .url-call {
+        display: block;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .info-data-site {
+        text-align: center;
+        max-width: 320px;
+        padding: 0;
+        word-wrap: break-word;
+    }
+
+    .info-data-site .info-data-title {
+        padding-right: 0;
+    }
+
+    .search-case {
+        max-width: 320px;
+    }
+
+    .info-data-title {
+        text-align: center;
+        max-width: 320px;
+    }
+
+    .similar-sites {
+        width: 275px;
+    }
+
+    .info-data {
+        box-shadow: none;
+        margin: 0;
+        padding-left: 10px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .info-data-rank {
+        width: 280px;
+        padding-right: 0;
+    }
+
+    .search-back-1 {
+        width: 335px;
+        padding-right: 0;
+    }
+}
+
+/*Loader*/
+#loading-bar,
+#loading-bar-spinner {
+    pointer-events: none;
+    -webkit-pointer-events: none;
+    -webkit-transition: 350ms linear all;
+    -moz-transition: 350ms linear all;
+    -o-transition: 350ms linear all;
+    transition: 350ms linear all;
+}
+
+#loading-bar.ng-enter,
+#loading-bar.ng-leave.ng-leave-active,
+#loading-bar-spinner.ng-enter,
+#loading-bar-spinner.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+#loading-bar.ng-enter.ng-enter-active,
+#loading-bar.ng-leave,
+#loading-bar-spinner.ng-enter.ng-enter-active,
+#loading-bar-spinner.ng-leave {
+    opacity: 1;
+}
+
+#loading-bar .bar {
+    -webkit-transition: width 350ms;
+    -moz-transition: width 350ms;
+    -o-transition: width 350ms;
+    transition: width 350ms;
+
+    background: #D42A58;
+    position: fixed;
+    z-index: 10002;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-bottom-right-radius: 1px;
+    border-top-right-radius: 1px;
+}
+
+/* Fancy blur effect */
+#loading-bar .peg {
+    position: absolute;
+    width: 70px;
+    right: 0;
+    top: 0;
+    height: 2px;
+    opacity: .45;
+    -moz-box-shadow: #D42A58 1px 0 6px 1px;
+    -ms-box-shadow: #D42A58 1px 0 6px 1px;
+    -webkit-box-shadow: #D42A58 1px 0 6px 1px;
+    box-shadow: #D42A58 1px 0 6px 1px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+#loading-bar-spinner {
+    display: block;
+    position: fixed;
+    z-index: 10002;
+    top: 10px;
+    left: 10px;
+}
+
+#loading-bar-spinner .spinner-icon {
+    width: 14px;
+    height: 14px;
+
+    border: solid 2px transparent;
+    border-top-color: #D42A58;
+    border-left-color: #D42A58;
+    border-radius: 10px;
+
+    -webkit-animation: loading-bar-spinner 400ms linear infinite;
+    -moz-animation: loading-bar-spinner 400ms linear infinite;
+    -ms-animation: loading-bar-spinner 400ms linear infinite;
+    -o-animation: loading-bar-spinner 400ms linear infinite;
+    animation: loading-bar-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes loading-bar-spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes loading-bar-spinner {
+    0% {
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes loading-bar-spinner {
+    0% {
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes loading-bar-spinner {
+    0% {
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading-bar-spinner {
+    0% {
+        transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
